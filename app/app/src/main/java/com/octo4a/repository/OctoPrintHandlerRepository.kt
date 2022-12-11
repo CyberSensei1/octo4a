@@ -122,7 +122,7 @@ class OctoPrintHandlerRepositoryImpl(
     override suspend fun beginInstallation() {
         withContext(Dispatchers.IO) {
             if (!bootstrapRepository.isBootstrapInstalled) {
-                val octoPrintRelease = githubRepository.getNewestRelease("OctoPrint/OctoPrint")
+                val octoPrintRelease = githubRepository.getNewestRelease("CyberSensei1/OctoPrint")
                 _octoPrintVersion.emit(octoPrintRelease.tagName)
 
                 logger.log { "No bootstrap detected, proceeding with installation" }
