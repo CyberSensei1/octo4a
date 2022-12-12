@@ -16,6 +16,8 @@ jobs:
       with:
         java-version: 11
     - name: Make Gradle executable
+      run: gradle wrapper
+    - name: Make Gradle executable
       run: chmod +x ./gradlew
     - name: Build Release APK
       run: ./gradlew assembleRelease
