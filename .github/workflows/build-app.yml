@@ -1,9 +1,6 @@
 name: Build & Publish Release APK
 
-on:
-  push:
-    tags:
-      - '*'
+on: [pull_request, push]
 
 jobs:
   Gradle:
@@ -15,8 +12,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Make Gradle executable
-      run: gradle wrapper
+    - name: Setup ndk
+      uses: nttld/setup-ndk@v1
+      with:
+        ndk-version: r21d
     - name: Make Gradle executable
       run: chmod +x ./gradlew
     - name: Build Release APK
