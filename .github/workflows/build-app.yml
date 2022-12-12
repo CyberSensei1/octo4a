@@ -14,13 +14,13 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Make Gradle executable
+    - name: Make Gradle executable octo4a-1
       run: chmod +x ./gradlew
-    - name: Build with Gradle
+    - name: Build with Gradle octo4a-2
       run: ./gradlew build
-    - name: Build Debug APK
+    - name: Build Debug APK octo4a-3
       run: ./gradlew assembleDebug
-    - name: Releasing using Hub
+    - name: Releasing using Hub octo4a-4
       uses: ShaunLWM/action-release-debugapk@master
       env:
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
