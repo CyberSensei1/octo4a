@@ -1,4 +1,4 @@
-name: Build & Publish Debug APK
+name: Build & Publish octo4a Debug APK
 
 on:
  push:
