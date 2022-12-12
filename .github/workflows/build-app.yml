@@ -16,10 +16,9 @@ jobs:
       uses: nttld/setup-ndk@v1
       with:
         ndk-version: r21d
-    - name: Make Gradle executable
-      run: chmod +x ./gradlew
     - name: Build Release APK
       run: ./gradlew assembleRelease
+      working-directory: ./app
     - name: Releasing using Hub
       uses: kyze8439690/action-release-releaseapk@master
       env:
